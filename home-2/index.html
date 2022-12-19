@@ -1,0 +1,1818 @@
+<!doctype html>
+<html lang="en-US">
+
+
+<!-- Mirrored from radiustheme.com/demo/wordpress/themes/fototag/home-2/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2022 11:25:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    				<script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
+				<title>Home 2 &#8211; Fototag</title>
+<meta name='robots' content='noindex, nofollow' />
+<noscript><style>#preloader{display:none;}</style></noscript><link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel="alternate" type="application/rss+xml" title="Fototag &raquo; Feed" href="https://radiustheme.com/demo/wordpress/themes/fototag/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Fototag &raquo; Comments Feed" href="https://radiustheme.com/demo/wordpress/themes/fototag/comments/feed/" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-includes\/js\/wp-emoji.js?ver=6.1.1","twemoji":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-includes\/js\/twemoji.js?ver=6.1.1"}};
+/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	// Create a canvas element for testing native browser support of emoji.
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Checks if two sets of Emoji characters render the same visually.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @private
+	 *
+	 * @param {number[]} set1 Set of Emoji character codes.
+	 * @param {number[]} set2 Set of Emoji character codes.
+	 *
+	 * @return {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detects if the browser supports rendering emoji or flag emoji.
+	 *
+	 * Flag emoji are a single glyph made of two characters, so some browsers
+	 * (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @private
+	 *
+	 * @param {string} type Whether to test for support of "flag" or "emoji".
+	 *
+	 * @return {boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for Transgender flag compatibility. This flag is shortlisted for the Emoji 13 spec,
+				 * but has landed in Twemoji early, so we can add support for it, too.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0x1F3F3, 0xFE0F, 0x200D, 0x26A7, 0xFE0F ],
+					[ 0x1F3F3, 0xFE0F, 0x200B, 0x26A7, 0xFE0F ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDDFA, 0xD83C, 0xDDF3 ],
+					[ 0xD83C, 0xDDFA, 0x200B, 0xD83C, 0xDDF3 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDFF4, 0xDB40, 0xDC67, 0xDB40, 0xDC62, 0xDB40, 0xDC65, 0xDB40, 0xDC6E, 0xDB40, 0xDC67, 0xDB40, 0xDC7F ],
+					[ 0xD83C, 0xDFF4, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC62, 0x200B, 0xDB40, 0xDC65, 0x200B, 0xDB40, 0xDC6E, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC7F ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * Why can't we be friends? Everyone can now shake hands in emoji, regardless of skin tone!
+				 *
+				 * To test for Emoji 14.0 support, try to render a new emoji: Handshake: Light Skin Tone, Dark Skin Tone.
+				 *
+				 * The Handshake: Light Skin Tone, Dark Skin Tone emoji is a ZWJ sequence combining 🫱 Rightwards Hand,
+				 * 🏻 Light Skin Tone, a Zero Width Joiner, 🫲 Leftwards Hand, and 🏿 Dark Skin Tone.
+				 *
+				 * 0x1FAF1 == Rightwards Hand
+				 * 0x1F3FB == Light Skin Tone
+				 * 0x200D == Zero-Width Joiner (ZWJ) that links the code points for the new emoji or
+				 * 0x200B == Zero-Width Space (ZWS) that is rendered for clients not supporting the new emoji.
+				 * 0x1FAF2 == Leftwards Hand
+				 * 0x1F3FF == Dark Skin Tone.
+				 *
+				 * When updating this test for future Emoji releases, ensure that individual emoji that make up the
+				 * sequence come from older emoji standards.
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[0x1FAF1, 0x1F3FB, 0x200D, 0x1FAF2, 0x1F3FF],
+					[0x1FAF1, 0x1F3FB, 0x200B, 0x1FAF2, 0x1F3FF]
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Adds a script to the head of the document.
+	 *
+	 * @ignore
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param {Object} src The url where the script is located.
+	 * @return {void}
+	 */
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	/*
+	 * Tests the browser support for flag emojis and other emojis, and adjusts the
+	 * support settings accordingly.
+	 */
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	// Sets DOMReady to false and assigns a ready function to settings.
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	// When the browser can not render everything we need to load a polyfill.
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		/*
+		 * Cross-browser version of adding a dom ready event.
+		 */
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+</script>
+<style >
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wc-blocks-integration-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce-payments/vendor/woocommerce/subscriptions-core/build/index.css?ver=1668623712'  media='all' />
+<link rel='stylesheet' id='sbi_styles-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.1'  media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/css/dist/block-library/style.css?ver=6.1.1'  media='all' />
+<style id='wp-block-library-theme-inline-css' >
+/**
+ * Colors
+ */
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * SCSS Variables.
+ *
+ * Please use variables from this sheet to ensure consistency across the UI.
+ * Don't add to this sheet unless you're pretty sure the value will be reused in many places.
+ * For example, don't add rules to this sheet that affect block visuals. It's purely for UI.
+ */
+/**
+ * Colors
+ */
+/**
+ * Fonts & basic variables.
+ */
+/**
+ * Grid System.
+ * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ */
+/**
+ * Dimensions.
+ */
+/**
+ * Shadows.
+ */
+/**
+ * Editor widths.
+ */
+/**
+ * Block & Editor UI.
+ */
+/**
+ * Block paddings.
+ */
+/**
+ * React Native specific.
+ * These variables do not appear to be used anywhere else.
+ */
+/**
+*  Converts a hex value into the rgb equivalent.
+*
+* @param {string} hex - the hexadecimal value to convert
+* @return {string} comma separated rgb values
+*/
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+.wp-block-audio figcaption {
+  color: #555;
+  font-size: 13px;
+  text-align: center;
+}
+.is-dark-theme .wp-block-audio figcaption {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.wp-block-audio {
+  margin: 0 0 1em 0;
+}
+
+.wp-block-code {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Menlo, Consolas, monaco, monospace;
+  padding: 0.8em 1em;
+}
+
+.wp-block-embed figcaption {
+  color: #555;
+  font-size: 13px;
+  text-align: center;
+}
+.is-dark-theme .wp-block-embed figcaption {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.wp-block-embed {
+  margin: 0 0 1em 0;
+}
+
+.blocks-gallery-caption {
+  color: #555;
+  font-size: 13px;
+  text-align: center;
+}
+.is-dark-theme .blocks-gallery-caption {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.wp-block-image figcaption {
+  color: #555;
+  font-size: 13px;
+  text-align: center;
+}
+.is-dark-theme .wp-block-image figcaption {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.wp-block-image {
+  margin: 0 0 1em 0;
+}
+
+.wp-block-pullquote {
+  border-top: 4px solid currentColor;
+  border-bottom: 4px solid currentColor;
+  margin-bottom: 1.75em;
+  color: currentColor;
+}
+.wp-block-pullquote cite,
+.wp-block-pullquote footer, .wp-block-pullquote__citation {
+  color: currentColor;
+  text-transform: uppercase;
+  font-size: 0.8125em;
+  font-style: normal;
+}
+
+.wp-block-quote {
+  border-left: 0.25em solid currentColor;
+  margin: 0 0 1.75em 0;
+  padding-left: 1em;
+}
+.wp-block-quote cite,
+.wp-block-quote footer {
+  color: currentColor;
+  font-size: 0.8125em;
+  position: relative;
+  font-style: normal;
+}
+.wp-block-quote.has-text-align-right {
+  border-left: none;
+  border-right: 0.25em solid currentColor;
+  padding-left: 0;
+  padding-right: 1em;
+}
+.wp-block-quote.has-text-align-center {
+  border: none;
+  padding-left: 0;
+}
+.wp-block-quote.is-style-plain, .wp-block-quote.is-style-large, .wp-block-quote.is-large {
+  border: none;
+}
+
+.wp-block-search .wp-block-search__label {
+  font-weight: bold;
+}
+
+.wp-block-search__button {
+  border: 1px solid #ccc;
+  padding: 0.375em 0.625em;
+}
+
+:where(.wp-block-group.has-background) {
+  padding: 1.25em 2.375em;
+}
+
+.wp-block-separator.has-css-opacity {
+  opacity: 0.4;
+}
+
+.wp-block-separator {
+  border: none;
+  border-bottom: 2px solid currentColor;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wp-block-separator.has-alpha-channel-opacity {
+  opacity: initial;
+}
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  width: 100px;
+}
+.wp-block-separator.has-background:not(.is-style-dots) {
+  border-bottom: none;
+  height: 1px;
+}
+.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+  height: 2px;
+}
+
+.wp-block-table {
+  margin: "0 0 1em 0";
+}
+.wp-block-table thead {
+  border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+  border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+  word-break: normal;
+}
+.wp-block-table figcaption {
+  color: #555;
+  font-size: 13px;
+  text-align: center;
+}
+.is-dark-theme .wp-block-table figcaption {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.wp-block-video figcaption {
+  color: #555;
+  font-size: 13px;
+  text-align: center;
+}
+.is-dark-theme .wp-block-video figcaption {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.wp-block-video {
+  margin: 0 0 1em 0;
+}
+
+.wp-block-template-part.has-background {
+  padding: 1.25em 2.375em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+</style>
+<style id='ce4wp-subscribe-style-inline-css' >
+.wp-block-ce4wp-subscribe{max-width:840px;margin:0 auto}.wp-block-ce4wp-subscribe .title{margin-bottom:0}.wp-block-ce4wp-subscribe .subTitle{margin-top:0;font-size:0.8em}.wp-block-ce4wp-subscribe .disclaimer{margin-top:5px;font-size:0.8em}.wp-block-ce4wp-subscribe .disclaimer .disclaimer-label{margin-left:10px}.wp-block-ce4wp-subscribe .inputBlock{width:100%;margin-bottom:10px}.wp-block-ce4wp-subscribe .inputBlock input{width:100%}.wp-block-ce4wp-subscribe .inputBlock label{display:inline-block}.wp-block-ce4wp-subscribe .submit-button{margin-top:25px;display:block}.wp-block-ce4wp-subscribe .required-text{display:inline-block;margin:0;padding:0;margin-left:0.3em}.wp-block-ce4wp-subscribe .onSubmission{height:0;max-width:840px;margin:0 auto}.wp-block-ce4wp-subscribe .firstNameSummary .lastNameSummary{text-transform:capitalize}.wp-block-ce4wp-subscribe .ce4wp-inline-notification{display:flex;flex-direction:row;align-items:center;padding:13px 10px;width:100%;height:40px;border-style:solid;border-color:orange;border-width:1px;border-left-width:4px;border-radius:3px;background:rgba(255,133,15,0.1);flex:none;order:0;flex-grow:1;margin:0px 0px}.wp-block-ce4wp-subscribe .ce4wp-inline-warning-text{font-style:normal;font-weight:normal;font-size:16px;line-height:20px;display:flex;align-items:center;color:#571600;margin-left:9px}.wp-block-ce4wp-subscribe .ce4wp-inline-warning-icon{color:orange}.wp-block-ce4wp-subscribe .ce4wp-inline-warning-arrow{color:#571600;margin-left:auto}.wp-block-ce4wp-subscribe .ce4wp-banner-clickable{cursor:pointer}.ce4wp-link{cursor:pointer}
+
+.no-flex{display:block}.sub-header{margin-bottom:1em}
+
+
+</style>
+<link rel='stylesheet' id='wc-blocks-vendors-style-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=1668623702'  media='all' />
+<link rel='stylesheet' id='wc-blocks-style-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=1668623702'  media='all' />
+<link rel='stylesheet' id='jquery-selectBox-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox.css?ver=1.2.0'  media='all' />
+<link rel='stylesheet' id='yith-wcwl-font-awesome-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.css?ver=4.7.0'  media='all' />
+<link rel='stylesheet' id='woocommerce_prettyPhoto_css-css' href='http://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/css/prettyPhoto.css?ver=3.1.6'  media='all' />
+<link rel='stylesheet' id='yith-wcwl-main-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-wishlist/assets/css/style.css?ver=3.15.0'  media='all' />
+<style id='yith-wcwl-main-inline-css' >
+.yith-wcwl-share li a{color: #FFFFFF;}.yith-wcwl-share li a:hover{color: #FFFFFF;}.yith-wcwl-share a.facebook{background: #39599E; background-color: #39599E;}.yith-wcwl-share a.facebook:hover{background: #39599E; background-color: #39599E;}.yith-wcwl-share a.twitter{background: #45AFE2; background-color: #45AFE2;}.yith-wcwl-share a.twitter:hover{background: #39599E; background-color: #39599E;}.yith-wcwl-share a.pinterest{background: #AB2E31; background-color: #AB2E31;}.yith-wcwl-share a.pinterest:hover{background: #39599E; background-color: #39599E;}.yith-wcwl-share a.email{background: #FBB102; background-color: #FBB102;}.yith-wcwl-share a.email:hover{background: #39599E; background-color: #39599E;}.yith-wcwl-share a.whatsapp{background: #00A901; background-color: #00A901;}.yith-wcwl-share a.whatsapp:hover{background: #39599E; background-color: #39599E;}
+</style>
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/css/classic-themes.css?ver=1'  media='all' />
+<style id='global-styles-inline-css' >
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--fototag-primary: #343434;--wp--preset--color--fototag-secondary: #666666;--wp--preset--color--fototag-light: #ffffff;--wp--preset--color--fototag-black: #000000;--wp--preset--color--fototag-dark: #111111;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 12px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 16px;--wp--preset--font-size--huge: 60px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.6.4'  media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.2.22'  media='all' />
+<style id='rs-plugin-settings-inline-css' >
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='woocommerce-layout-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=7.1.0'  media='all' />
+<style id='woocommerce-layout-inline-css' >
+
+	.infinite-scroll .woocommerce-pagination {
+		display: none;
+	}
+</style>
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=7.1.0'  media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=7.1.0'  media='all' />
+<style id='woocommerce-inline-inline-css' >
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='rtwpvg-slider-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woo-product-variation-gallery-pro/assets/css/slick.css?ver=1.8.1'  media='all' />
+<link rel='stylesheet' id='dashicons-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/css/dashicons.css?ver=6.1.1'  media='all' />
+<style id='dashicons-inline-css' >
+[data-font="Dashicons"]:before {font-family: 'Dashicons' !important;content: attr(data-icon) !important;speak: none !important;font-weight: normal !important;font-variant: normal !important;text-transform: none !important;line-height: 1 !important;font-style: normal !important;-webkit-font-smoothing: antialiased !important;-moz-osx-font-smoothing: grayscale !important;}
+</style>
+<link rel='stylesheet' id='rtwpvg-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woo-product-variation-gallery-pro/assets/css/rtwpvg.css?ver=1671449119'  media='all' />
+<style id='rtwpvg-inline-css' >
+        
+            :root {
+                --rtwpvg-thumbnail-gap: 15px;
+                --rtwpvg-gallery-margin-bottom: 30px;
+            }
+
+            /* Large Screen / Default Width */
+            .rtwpvg-images {
+                max-width: 100%;
+            }
+
+            /* style */
+                        .rtwpvg-wrapper .rtwpvg-slider-wrapper .rtwpvg-slider-prev-arrow,
+            .rtwpvg-wrapper .rtwpvg-slider-wrapper .rtwpvg-slider-next-arrow,
+            .rtwpvg-wrapper .rtwpvg-thumbnail-wrapper .rtwpvg-thumbnail-prev-arrow,
+            .rtwpvg-wrapper .rtwpvg-thumbnail-wrapper .rtwpvg-thumbnail-next-arrow {
+             background: rgba(0, 0, 0, 0.5);
+             color: #ffffff;
+                        }
+
+                                    .rtwpvg-wrapper .rtwpvg-slider-wrapper .rtwpvg-slider-next-arrow:hover,
+            .rtwpvg-wrapper .rtwpvg-slider-wrapper .rtwpvg-slider-prev-arrow:hover,
+            .rtwpvg-wrapper .rtwpvg-thumbnail-wrapper .rtwpvg-thumbnail-slider .rtwpvg-thumbnail-prev-arrow:hover,
+            .rtwpvg-wrapper .rtwpvg-thumbnail-wrapper .rtwpvg-thumbnail-slider .rtwpvg-thumbnail-next-arrow:hover {
+             background: rgba(0, 0, 0, 0.9);
+             color: #ffffff;
+                        }
+
+                        /* MD, Desktops */
+            
+            /* SM Devices, Tablets */
+                        @media only screen and (max-width: 768px) {
+                .rtwpvg-images {
+                    width: 720px;
+                    max-width: 100% !important;
+                }
+            }
+
+            
+            /* XSM Devices, Phones */
+                        @media only screen and (max-width: 480px) {
+                .rtwpvg-images {
+                    width: 320px;
+                    max-width: 100% !important;
+                }
+            }
+
+                    
+        
+</style>
+<link rel='stylesheet' id='jquery-colorbox-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-compare/assets/css/colorbox.css?ver=1.4.21'  media='all' />
+<link rel='stylesheet' id='yith-quick-view-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-quick-view/assets/css/yith-quick-view.css?ver=1.21.0'  media='all' />
+<style id='yith-quick-view-inline-css' >
+
+				#yith-quick-view-modal .yith-wcqv-main{background:#ffffff;}
+				#yith-quick-view-close{color:#cdcdcd;}
+				#yith-quick-view-close:hover{color:#ff0000;}
+</style>
+<link rel='stylesheet' id='elementor-icons-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.css?ver=5.16.0'  media='all' />
+<link rel='stylesheet' id='elementor-frontend-legacy-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/elementor/css/custom-frontend-legacy.css?ver=3.8.1'  media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/elementor/css/custom-frontend.css?ver=1637228151'  media='all' />
+<link rel='stylesheet' id='elementor-post-124-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/elementor/css/post-124.css?ver=1637228151'  media='all' />
+<link rel='stylesheet' id='elementor-post-718-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/elementor/css/post-718.css?ver=1637228159'  media='all' />
+<link rel='stylesheet' id='fototag-gfonts-css' href='http://fonts.googleapis.com/css?family=Lato%3A300%2C400%26display%3Dswap%7CJosefin+Sans%3A600%2Cnormal%26display%3Dswap&amp;subset=latin&amp;display=fallback&amp;ver=1671449119'  media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/css/bootstrap.min.css?ver=1671449119'  media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/css/all.min.css?ver=1671449119'  media='all' />
+<style id='font-awesome-inline-css' >
+[data-font="FontAwesome"]:before {font-family: 'FontAwesome' !important;content: attr(data-icon) !important;speak: none !important;font-weight: normal !important;font-variant: normal !important;text-transform: none !important;line-height: 1 !important;font-style: normal !important;-webkit-font-smoothing: antialiased !important;-moz-osx-font-smoothing: grayscale !important;}
+</style>
+<link rel='stylesheet' id='slick-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/css/slick.css?ver=1671449119'  media='all' />
+<link rel='stylesheet' id='magnific-popup-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/css/magnific-popup.css?ver=1671449119'  media='all' />
+<link rel='stylesheet' id='animate-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/css/animate.min.css?ver=1671449119'  media='all' />
+<link rel='stylesheet' id='meanmenu-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/css/meanmenu.min.css?ver=1671449119'  media='all' />
+<link rel='stylesheet' id='sal-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/css/sal.css?ver=1671449119'  media='all' />
+<link rel='stylesheet' id='fototag-style-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/css/style.css?ver=1671449119'  media='all' />
+<style id='fototag-dynamic-inline-css' >
+.inner-page-banner { background-image: url(https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/inner-banner.jpg)}.inner-page-banner:after { background-color: #000000}.inner-page-banner:after { opacity: 0.5}.inner-page-banner {padding-top:230px;}.admin-bar .inner-page-banner {padding-top:230px;}.inner-page-banner {padding-bottom:140px;}.admin-bar .inner-page-banner {padding-bottom:140px;}.pp-full-section { background-image: url(https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/gallery31.jpg)}.custom-cursor .circle-cursor--outer { border-color: #ff0000}.custom-cursor .circle-cursor--inner { background-color: #ff0000} body { font-family: 'Inherit', sans-serif; font-size: 1rem; line-height: 1.75rem; font-weight : normal; font-style: normal; } .footer-modern .footer-menu, nav.template-main-menu > ul, .fixed-side-menu .menu-list, .mean-container .mean-nav, .offcanvas-menu-wrap { font-family: 'Josefin Sans', sans-serif; font-size: 1rem; line-height: 1.75rem; font-weight : normal; font-style: normal; } h1,h2,h3,h4,h5,h6 { font-family: 'Josefin Sans', sans-serif; font-weight : 600; } h1 { font-size: 2.887rem; line-height: 3.4644rem; font-style: normal; } h2 { font-size: 2.281em; line-height: 2.9653rem; font-style: normal; } h3 { font-size: 1.802rem; line-height: 2.703rem; font-style: normal; } h4 { font-size: 1.424rem; line-height: 2.2784rem; font-style: normal; } h5 { font-size: 1.125rem; line-height: 1.9125rem; font-style: normal; } h6 { font-size: 1rem; line-height: 1.875rem; font-style: normal; } 
+</style>
+<link rel='stylesheet' id='fototag-core-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/fototag-core/assets/css/fototag-core.css?ver=6.1.1'  media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.css?ver=5.15.3'  media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.css?ver=5.15.3'  media='all' />
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/js/jquery/jquery.js?ver=3.6.1' id='jquery-core-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/js/jquery/jquery-migrate.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.2.22' id='tp-tools-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.2.22' id='revmin-js'></script>
+<link rel="https://api.w.org/" href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-json/" /><link rel="alternate" type="application/json" href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-json/wp/v2/pages/718" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://radiustheme.com/demo/wordpress/themes/fototag/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<meta name="generator" content="WooCommerce 7.1.0" />
+<link rel="canonical" href="https://radiustheme.com/demo/wordpress/themes/fototag/home-2/" />
+<link rel='shortlink' href='https://radiustheme.com/demo/wordpress/themes/fototag/?p=718' />
+<link rel="alternate" type="application/json+oembed" href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fradiustheme.com%2Fdemo%2Fwordpress%2Fthemes%2Ffototag%2Fhome-2%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fradiustheme.com%2Fdemo%2Fwordpress%2Fthemes%2Ffototag%2Fhome-2%2F&amp;format=xml" />
+	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+			<style id="fototag-custom-header-styles" >
+
+					.header-logo a,
+			.site-description {
+				position: relative;
+				clip: rect(1px, 1px, 1px, 1px);
+			}
+				</style>
+		<meta name="generator" content="Powered by Slider Revolution 6.2.22 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/favicon.jpg" sizes="32x32" />
+<link rel="icon" href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/favicon.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/favicon.jpg" />
+<meta name="msapplication-TileImage" content="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/favicon.jpg" />
+<script>function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}				
+					if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					
+					document.getElementById(e.c).height = newh+"px";
+					window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+</head>
+
+<body class="page-template page-template-elementor_header_footer page page-id-718 wp-embed-responsive theme-fototag woocommerce-no-js rtwpvg no-lightbox loaded sticky-header has-offcanvas no-custom-cursor header-style-3 no-sidebar elementor-default elementor-template-full-width elementor-kit-124 elementor-page elementor-page-718">
+    
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-dark-grayscale">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0 0.49803921568627" />
+					<feFuncG type="table" tableValues="0 0.49803921568627" />
+					<feFuncB type="table" tableValues="0 0.49803921568627" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-grayscale">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0 1" />
+					<feFuncG type="table" tableValues="0 1" />
+					<feFuncB type="table" tableValues="0 1" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-purple-yellow">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+					<feFuncG type="table" tableValues="0 1" />
+					<feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-blue-red">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0 1" />
+					<feFuncG type="table" tableValues="0 0.27843137254902" />
+					<feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-midnight">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0 0" />
+					<feFuncG type="table" tableValues="0 0.64705882352941" />
+					<feFuncB type="table" tableValues="0 1" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-magenta-yellow">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0.78039215686275 1" />
+					<feFuncG type="table" tableValues="0 0.94901960784314" />
+					<feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-purple-green">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+					<feFuncG type="table" tableValues="0 1" />
+					<feFuncB type="table" tableValues="0.44705882352941 0.4" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-blue-orange">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0.098039215686275 1" />
+					<feFuncG type="table" tableValues="0 0.66274509803922" />
+					<feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+    <div id="preloader"><img src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2022/05/my.svg"></div>    <!-- Custom Cursor Start Here -->
+    <div class="circle-cursor circle-cursor--outer"></div>
+    <div class="circle-cursor circle-cursor--inner"></div>
+    <div id="wrapper" class="wrapper">
+        <div id="masthead" class="site-header">
+            
+<!--=====================================-->
+<!--=            Header Start           =-->
+<!--=====================================-->
+<header class="static-header header3">
+  <div id="header-menu" class="header-menu menu-layout4">
+    <div class="container-xl container-fluid">
+      <div class="row d-flex align-items-center">
+        <div class="col-sm-8">
+          <div class="header-action header-action-dark">
+            <ul class="d-flex align-items-center">
+              <li>
+                <div class="toggle-btn">
+                  <button class="btn-wrap offcanvas-menu-btn menu-status-open">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+                </div>
+              </li>
+              <li class="main-logo">
+                <div class="header-logo dark-logo">
+	<a href="https://radiustheme.com/demo/wordpress/themes/fototag/">
+	    	        <img src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/logo-dark.png" alt="Fototag">
+	    	</a>
+	</div>              </li>
+            </ul>
+          </div>
+        </div>
+                <div class="col-sm-4 d-sm-flex justify-content-end d-none d-sm-block">
+          <div class="header-action header-action-dark">
+            <ul>
+              <li><a href="https://radiustheme.com/demo/wordpress/themes/fototag/gallery-archive/" class="all-work-btn"><i class="flaticon-menu"></i>All Work</a></li>
+            </ul>
+          </div>
+        </div>
+              </div>
+    </div>
+  </div>
+</header>
+
+<!--=====================================-->
+<!--=        Offcanvas Menu Start       =-->
+<!--=====================================-->
+
+<div class="offcanvas-menu-wrap" id="offcanvas-wrap">
+  <div class="close-btn offcanvas-close"><i class="fas fa-times"></i></div>
+  <div class="offcanvas-content text-left">
+    <ul id="menu-main-menu" class="offcanvas-menu"><li id="menu-item-31" class="mega-menu mega-menu-col-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-31"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/">Home</a>
+<ul class="sub-menu">
+	<li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-29"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/">Main Home</a></li>
+	<li id="menu-item-1435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1435"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/parallax-showcase/">Parallax Showcase</a></li>
+	<li id="menu-item-756" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-718 current_page_item menu-item-756"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/home-2/" aria-current="page">Wedding Photography</a></li>
+	<li id="menu-item-862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-862"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/split-slide/">Split Slide</a></li>
+	<li id="menu-item-2320" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2320"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/thumbnail-slide/">Thumbnail Slide</a></li>
+	<li id="menu-item-1434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1434"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/animated-transition/">Animated Transition</a></li>
+	<li id="menu-item-1023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1023"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/horizontal-slide/">Horizontal Slide</a></li>
+	<li id="menu-item-1022" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1022"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/album-side-menu/">Album Side Menu</a></li>
+	<li id="menu-item-2318" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2318"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/photo-slider/">Photo Slider</a></li>
+	<li id="menu-item-2319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2319"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/album-slider/">Album Slider</a></li>
+	<li id="menu-item-2322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2322"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/mesonry-album/">Mesonry Album</a></li>
+</ul>
+</li>
+<li id="menu-item-32" class="mega-menu mega-menu-col-2 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-32"><a href="#">Pages</a>
+<ul class="sub-menu">
+	<li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/about-us/">About Us</a></li>
+	<li id="menu-item-864" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-864"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/price-list/">Price List</a></li>
+	<li id="menu-item-863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-863"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/pricing-table/">Pricing Table</a></li>
+	<li id="menu-item-1105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1105"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/about-author/">About Author</a></li>
+	<li id="menu-item-1099" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1099"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/services/">Services</a></li>
+	<li id="menu-item-1101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1101"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/clients/">Clients</a></li>
+	<li id="menu-item-1115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1115"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/our-team/">Team</a></li>
+	<li id="menu-item-1100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1100"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/event-gallery/">Event Gallery</a></li>
+	<li id="menu-item-1267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1267"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/coming-soon/">Coming Soon</a></li>
+</ul>
+</li>
+<li id="menu-item-946" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-946"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/photoshoot-3-columns/">Photoshoots</a>
+<ul class="sub-menu">
+	<li id="menu-item-947" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-947"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/photoshoot-2-columns/">Photoshoot 2 Columns</a></li>
+	<li id="menu-item-948" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-948"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/photoshoot-3-columns/">Photoshoot 3 Columns</a></li>
+	<li id="menu-item-957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-957"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/photoshoot-masonry-2-columns/">Photoshoot Masonry 2 Columns</a></li>
+	<li id="menu-item-956" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-956"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/photoshoot-masonry-3-columns/">Photoshoot Masonry 3 Columns</a></li>
+</ul>
+</li>
+<li id="menu-item-120" class="mega-menu mega-menu-col-2 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-120"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/gallery-archive/">Gallery</a>
+<ul class="sub-menu">
+	<li id="menu-item-125" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-125"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/gallery-archive/?gallery_view=1&amp;gposts=8&amp;cols=6">Gallery 2 Columns</a></li>
+	<li id="menu-item-128" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-128"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/gallery-archive/?gallery_view=2&amp;cols=4">Masonry 3 Columns</a></li>
+	<li id="menu-item-121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/gallery-archive/">Gallery 3 Column</a></li>
+	<li id="menu-item-2317" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2317"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/protect-gallery/">Protect Gallery</a></li>
+	<li id="menu-item-126" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-126"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/gallery-archive/?gallery_view=1&amp;gposts=12&amp;cols=3">Gallery 4 Columns</a></li>
+	<li id="menu-item-1400" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1400"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/proof-gallery/">Proof Gallery</a></li>
+	<li id="menu-item-127" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-127"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/gallery-archive/?gallery_view=2&amp;gposts=9&amp;cols=6">Masonry 2 Columns</a></li>
+	<li id="menu-item-1232" class="menu-item menu-item-type-post_type menu-item-object-fototag_gallery menu-item-1232"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/fototag_gallery/world-fashion-show/">Single Gallery</a></li>
+</ul>
+</li>
+<li id="menu-item-2461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2461"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/shop/">Shop</a>
+<ul class="sub-menu">
+	<li id="menu-item-2462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2462"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/shop/">Shop</a></li>
+	<li id="menu-item-2460" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2460"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/cart/">Cart</a></li>
+	<li id="menu-item-2459" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2459"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/checkout/">Checkout</a></li>
+</ul>
+</li>
+<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-30"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/blog/">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/blog/">Blog List</a></li>
+	<li id="menu-item-77" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/blog/?view=2">Blog Grid</a></li>
+	<li id="menu-item-85" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-85"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/blog/?view=3">Blog Masonry</a></li>
+	<li id="menu-item-1834" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1834"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/what-your-friends-think-about-is-photographers/">Blog Details</a></li>
+</ul>
+</li>
+<li id="menu-item-1432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1432"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/contact-us/">Contact</a></li>
+</ul>  </div>
+</div>        </div> 
+        				<div data-elementor-type="wp-page" data-elementor-id="718" class="elementor elementor-718">
+						<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+									<section class="elementor-section elementor-top-section elementor-element elementor-element-5fe1e94 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="5fe1e94" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-45aa91a" data-id="45aa91a" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-e440150 elementor-invisible elementor-widget elementor-widget-heading" data-id="e440150" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:100}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Make it Professional</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-b94e2b2 elementor-invisible elementor-widget elementor-widget-heading" data-id="b94e2b2" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">BOLD & BEAUTIFUL</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-92eba7f elementor-widget elementor-widget-rt-hero-slider" data-id="92eba7f" data-element_type="widget" data-widget_type="rt-hero-slider.default">
+				<div class="elementor-widget-container">
+			
+<div class="container-fluid full-width">
+    <div id="bg-stretch" class="hero-slick hero-carousel" data-slick='{&quot;slidesToShow&quot;:&quot;1&quot;,&quot;autoplaySpeed&quot;:&quot;2000&quot;,&quot;dots&quot;:false,&quot;arrows&quot;:true,&quot;fade&quot;:true,&quot;autoplay&quot;:false}'>
+                 <div class="hero-img">
+            <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/hero1.jpg" alt="Wedding Photography">
+        </div>
+                <div class="hero-img">
+            <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/hero9.jpg" alt="Wedding Photography">
+        </div>
+                <div class="hero-img">
+            <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/hero15.jpg" alt="Wedding Photography">
+        </div>
+            </div>
+</div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-24a2797 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="24a2797" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-fa28576" data-id="fa28576" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-6ce7b36 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="6ce7b36" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-ce6ec6b" data-id="ce6ec6b" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-445c254 elementor-widget elementor-widget-image" data-id="445c254" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="848" height="700" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/about4.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/about4.jpg 848w, https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/about4-600x495.jpg 600w, https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/about4-300x248.jpg 300w, https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/10/about4-768x634.jpg 768w" sizes="(max-width: 848px) 100vw, 848px" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2d528f1 d-flex align-items-center" data-id="2d528f1" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2856b00 about-content-70 elementor-widget elementor-widget-rt-about-box" data-id="2856b00" data-element_type="widget" data-widget_type="rt-about-box.default">
+				<div class="elementor-widget-container">
+			
+<div class="about-box-content common-about">
+        <div class="item-subtitle">Wedding Photography</div>
+    <h2  class="item-title">Explore our exclusive, We Believe in the Power of Images</h2>   <p>Grursus mal suada faci lisis Lorem ipsum dolarorit more a ametion consectetur elit. Vesti at bulum nec odio aea the dumm ipsumm ipsum that dolocons rsus mal suada and fadolorit to the consectetur elit. All the Lorem generators on at the Internet tend to repeat predefined chunks as necessary, making this the at first true generator on the Internet. It uses a dictionary of over 200 words, the combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>        <a href="#" class="btn-line common-link"><span>Read More</span></a>
+    </div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-67c414d elementor-section-full_width container-xl elementor-section-height-default elementor-section-height-default" data-id="67c414d" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d6ab605" data-id="d6ab605" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-79e4569 elementor-widget elementor-widget-rt-title" data-id="79e4569" data-element_type="widget" data-widget_type="rt-title.default">
+				<div class="elementor-widget-container">
+			
+<div class="section-header">
+    <h2 class="heading-title lt-specing-meduim">Explore Our Stories</h2>
+</div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-429301e elementor-widget elementor-widget-rt-image-gallery" data-id="429301e" data-element_type="widget" data-widget_type="rt-image-gallery.default">
+				<div class="elementor-widget-container">
+			<!--=====================================-->
+<!--=        Image Gallery Start        =-->
+<!--=====================================-->
+<div class="masonary-portfolio-section overflow-hidden">
+    <div class="row" id="no-equal-gallery">
+                 <div class="col-lg-4 col-sm-6 no-equal-item gallery-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200">
+            <div class="masonary-portfolio">
+                <a href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g2.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1" data-elementor-lightbox-title="Home 2">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g2.jpg" class="exclude-ll" alt="Gallery Image">
+                </a>
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6 no-equal-item gallery-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300">
+            <div class="masonary-portfolio">
+                <a href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g1.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1" data-elementor-lightbox-title="Home 2">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g1.jpg" class="exclude-ll" alt="Gallery Image">
+                </a>
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6 no-equal-item gallery-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="400">
+            <div class="masonary-portfolio">
+                <a href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g3.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1" data-elementor-lightbox-title="Home 2">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g3.jpg" class="exclude-ll" alt="Gallery Image">
+                </a>
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6 no-equal-item gallery-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500">
+            <div class="masonary-portfolio">
+                <a href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g4.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1" data-elementor-lightbox-title="Home 2">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g4.jpg" class="exclude-ll" alt="Gallery Image">
+                </a>
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6 no-equal-item gallery-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="600">
+            <div class="masonary-portfolio">
+                <a href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g5.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1" data-elementor-lightbox-title="Home 2">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g5.jpg" class="exclude-ll" alt="Gallery Image">
+                </a>
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6 no-equal-item gallery-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="700">
+            <div class="masonary-portfolio">
+                <a href="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g6.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1" data-elementor-lightbox-title="Home 2">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/h2g6.jpg" class="exclude-ll" alt="Gallery Image">
+                </a>
+            </div>
+        </div>
+            </div>
+</div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-59f10e9 elementor-align-center elementor-widget elementor-widget-rt-button" data-id="59f10e9" data-element_type="widget" data-widget_type="rt-button.default">
+				<div class="elementor-widget-container">
+			
+<div class="text-button fototag-btn">
+	<a class="btn-line" href="https://radiustheme.com/demo/wordpress/themes/fototag/album-side-menu/"><span>More Works</span></a>
+</div>
+
+		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-7f56242 elementor-section-full_width position-relative elementor-section-height-default elementor-section-height-default" data-id="7f56242" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a345e6a" data-id="a345e6a" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-e0dfa47 elementor-widget elementor-widget-rt-video-button" data-id="e0dfa47" data-element_type="widget" data-widget_type="rt-video-button.default">
+				<div class="elementor-widget-container">
+			<!--=====================================-->
+<!--=            Banner Start       	=-->
+<!--=====================================-->
+<div class="video-banner-section video-v1">
+    <div class="container">
+        <div class="media">
+	        <div class="icon-wrap">
+	            <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=1iIZeIy7TqM">
+	                						<i class="fas fa-play"></i>
+						            </a>
+	        </div>
+	        <div class="media-body">
+	            <div class="item-subtitle">Behind The Scenes</div>
+	            <h2 class="item-title">Inspired by balance</h2>
+	        </div>
+	    </div>
+    </div>
+</div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-f6482cf elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f6482cf" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c929e32" data-id="c929e32" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-8cb1756 elementor-widget elementor-widget-rt-tabs" data-id="8cb1756" data-element_type="widget" data-widget_type="rt-tabs.default">
+				<div class="elementor-widget-container">
+			
+<!--=====================================-->
+<!--=          Portfolio Start          =-->
+<!--=====================================-->
+<div class="latest-photoshoot">
+    <div class="row">
+        <div class="col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
+            <div class="photoshoot-tab">
+                                <h2 class="item-title">Latest Photoshoot</h2>
+                                <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100">
+                        <a class="nav-link active" data-toggle="tab" href="#David-Lee---Maria-Anderson" role="tab" aria-selected="true">David Lee &amp; Maria Anderson</a>
+                    </li>
+                                        <li class="nav-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200">
+                        <a class="nav-link " data-toggle="tab" href="#Robert-Pattinson---Lily-David" role="tab" aria-selected="false">Robert Pattinson &amp; Lily David</a>
+                    </li>
+                                        <li class="nav-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300">
+                        <a class="nav-link " data-toggle="tab" href="#Jonas-Blue---Julia-Anderson" role="tab" aria-selected="false">Jonas Blue &amp; Julia Anderson</a>
+                    </li>
+                                        <li class="nav-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="400">
+                        <a class="nav-link " data-toggle="tab" href="#Cristina-Tello---Her-Friends" role="tab" aria-selected="false">Cristina Tello &amp; Her Friends</a>
+                    </li>
+                                        <li class="nav-item" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500">
+                        <a class="nav-link " data-toggle="tab" href="#Chris-Hemsworth---Kelly-Kim" role="tab" aria-selected="false">Chris Hemsworth &amp; Kelly Kim</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="tab-content custom-sal">
+                                <div class="tab-pane fade show active anim-elem" id="David-Lee---Maria-Anderson" role="tabpanel" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/H2tab1.jpg" alt="">
+                    <div class="item-text">David Lee &amp; Maria Anderson</div>
+                </div>
+                                <div class="tab-pane fade  anim-elem" id="Robert-Pattinson---Lily-David" role="tabpanel" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/H2tab2.jpg" alt="">
+                    <div class="item-text">Robert Pattinson &amp; Lily David</div>
+                </div>
+                                <div class="tab-pane fade  anim-elem" id="Jonas-Blue---Julia-Anderson" role="tabpanel" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/H2tab3.jpg" alt="">
+                    <div class="item-text">Jonas Blue &amp; Julia Anderson</div>
+                </div>
+                                <div class="tab-pane fade  anim-elem" id="Cristina-Tello---Her-Friends" role="tabpanel" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/H2tab4.jpg" alt="">
+                    <div class="item-text">Cristina Tello &amp; Her Friends</div>
+                </div>
+                                <div class="tab-pane fade  anim-elem" id="Chris-Hemsworth---Kelly-Kim" role="tabpanel" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100">
+                    <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/H2tab5.jpg" alt="">
+                    <div class="item-text">Chris Hemsworth &amp; Kelly Kim</div>
+                </div>
+                            </div>
+        </div>
+    </div>
+</div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-5361c80 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="5361c80" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-49a2511" data-id="49a2511" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-4a7e10a elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="4a7e10a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d9a777b" data-id="d9a777b" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-fe1700d elementor-widget elementor-widget-image" data-id="fe1700d" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="790" height="700" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/testimonial4.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/testimonial4.jpg 790w, https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/testimonial4-600x532.jpg 600w, https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/testimonial4-300x266.jpg 300w, https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/testimonial4-768x681.jpg 768w" sizes="(max-width: 790px) 100vw, 790px" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-860d3f4 align-items-center" data-id="860d3f4" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-35343c9 elementor-widget elementor-widget-rt-testimonial" data-id="35343c9" data-element_type="widget" data-widget_type="rt-testimonial.default">
+				<div class="elementor-widget-container">
+			<div class="testimonial-full-width">
+    <div class="testimonial-slider-box">
+        <div class="testimonial-slick2 slick-content" data-slick='{&quot;slidesToShow&quot;:&quot;1&quot;,&quot;slidesToShowTab&quot;:&quot;1&quot;,&quot;slidesToShowMobile&quot;:&quot;1&quot;,&quot;slidesToShowMobiles&quot;:&quot;1&quot;,&quot;autoplaySpeed&quot;:&quot;2000&quot;,&quot;dots&quot;:true,&quot;arrows&quot;:false,&quot;fade&quot;:false,&quot;autoplay&quot;:false,&quot;vertical&quot;:true,&quot;verticalSwiping&quot;:true}'>
+                        <div class="content-box common-test-style">
+                                <p>Grursus mal suada faci lisis Lorem ipsum dolarorit more a ametion consectetur elit. Vesti at bulum nec odio aea the dumm ipsumm the ipsum that dolocons rsus mal suada and fadolorit consectetur elit. All the Lorem Ipsum generators on the Internet tend to repeat and predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words more a combined with a handful of model sentence structures, to generate Lorem the Ipsum which looks reasonable. </p>
+                                <div class="media">
+                                        <div class="item-img">
+                        <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/1tes.png" alt="testimonial">
+                    </div>
+                                        <div class="media-body">
+                                                <h4 class="item-title">Jackor Adam</h4>
+                                                <div class="item-subtitle">CEO, RT Theme</div>
+                                            </div>
+                </div>
+            </div>
+                        <div class="content-box common-test-style">
+                                <p>Grursus mal suada faci lisis Lorem ipsum dolarorit more a ametion consectetur elit. Vesti at bulum nec odio aea the dumm ipsumm the ipsum that dolocons rsus mal suada and fadolorit consectetur elit. All the Lorem Ipsum generators on the Internet tend to repeat and predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words more a combined with a handful of model sentence structures, to generate Lorem the Ipsum which looks reasonable. </p>
+                                <div class="media">
+                                        <div class="item-img">
+                        <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/2tes.png" alt="testimonial">
+                    </div>
+                                        <div class="media-body">
+                                                <h4 class="item-title">Alisa Adam</h4>
+                                                <div class="item-subtitle">CTO, RT Theme</div>
+                                            </div>
+                </div>
+            </div>
+                        <div class="content-box common-test-style">
+                                <p>Grursus mal suada faci lisis Lorem ipsum dolarorit more a ametion consectetur elit. Vesti at bulum nec odio aea the dumm ipsumm the ipsum that dolocons rsus mal suada and fadolorit consectetur elit. All the Lorem Ipsum generators on the Internet tend to repeat and predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words more a combined with a handful of model sentence structures, to generate Lorem the Ipsum which looks reasonable. </p>
+                                <div class="media">
+                                        <div class="item-img">
+                        <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/3tes.png" alt="testimonial">
+                    </div>
+                                        <div class="media-body">
+                                                <h4 class="item-title">Alisa Adam</h4>
+                                                <div class="item-subtitle">CTO, RT Theme</div>
+                                            </div>
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-1ff98bc elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1ff98bc" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ac4a690" data-id="ac4a690" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-d5de44c elementor-widget elementor-widget-rt-title" data-id="d5de44c" data-element_type="widget" data-widget_type="rt-title.default">
+				<div class="elementor-widget-container">
+			
+<div class="section-header">
+    <h2 class="heading-title lt-specing-meduim">A many more...</h2>
+</div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-2ca21ea elementor-widget elementor-widget-rt-brand-logos" data-id="2ca21ea" data-element_type="widget" data-widget_type="rt-brand-logos.default">
+				<div class="elementor-widget-container">
+			<div class="brand-grid">
+    <div class="row gutters-40">
+                <div class="col-lg-4 col-sm-6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="50">
+            <div class="brand-box brand-border">
+                <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/10_Logo.png" alt="Brand Logo">
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100">
+            <div class="brand-box brand-border">
+                <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/06_Logo.png" alt="Brand Logo">
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="150">
+            <div class="brand-box brand-border">
+                <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/05_Logo.png" alt="Brand Logo">
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200">
+            <div class="brand-box brand-border">
+                <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/02_Logo.png" alt="Brand Logo">
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="250">
+            <div class="brand-box brand-border">
+                <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/01_Logo.png" alt="Brand Logo">
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300">
+            <div class="brand-box brand-border">
+                <img decoding="async" src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/12/04_Logo.png" alt="Brand Logo">
+            </div>
+        </div>
+            </div>
+</div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+									</div>
+			</div>
+					</div>
+		
+
+<!--=====================================-->
+<!--=      	Call to Action Start   		=-->
+<!--=====================================-->
+<section class="call-to-action" data-sal-duration="1000" data-sal="slide-up">
+    <div class="container">
+        <div class="action-box">
+            <h2 class="item-title">Are You Ready To Start Something Amazing ...</h2>
+            <div class="item-btn">
+                <a href="#" class="btn-fill-lg">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=====================================-->
+<!--=            Footer Start           =-->
+<!--=====================================-->
+<footer class="footer-section footer-modern footer1 footer-cta-have footer-lm-have">
+        <div class="container">
+                <div class="footer-logo">
+            <div class="header-logo light-logo">
+	<a href="https://radiustheme.com/demo/wordpress/themes/fototag/">
+	    	        <img src="https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/uploads/2020/11/logo-light.png" alt="Fototag">
+	    	</a>
+	</div>        </div>
+                <div class="footer-menu">
+            <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="footer-menu"><li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-33"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/">Home</a></li>
+<li id="menu-item-823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-823"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/about-us/">About Us</a></li>
+<li id="menu-item-822" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-822"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/price-list/">Price List</a></li>
+<li id="menu-item-1408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1408"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/photoshoot-3-columns/">Photoshoot</a></li>
+<li id="menu-item-1409" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1409"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/proof-gallery/">Proof Gallery</a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/blog/">Blog</a></li>
+<li id="menu-item-1410" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1410"><a href="https://radiustheme.com/demo/wordpress/themes/fototag/contact-us/">Contact</a></li>
+</ul></div>        </div>
+            </div>
+        <div class="footer-bottom-border">
+        <div class="item-border">
+            <div class="copyright-text">&copy; 2022 Fototag. All Rights Reserved by <a target="_blank" rel="nofollow" href="#">RadiusTheme</a></div>
+        </div>
+    </div>
+</footer>
+</div>
+
+<a href="#wrapper" data-type="section-switch" class="scrollup back-top">
+			<i class="fas fa-angle-double-up"></i>
+		</a><!-- Instagram Feed JS -->
+<script>
+var sbiajaxurl = "https://radiustheme.com/demo/wordpress/themes/fototag/wp-admin/admin-ajax.php";
+</script>
+<script type="text/html" id="tmpl-rtwpvg-slider-template">
+    <# hasVideo = (  data.rtwpvg_video_link ) ? 'rtwpvg-gallery-video' : '' #>
+    <# thumbnailSrc = (  data.rtwpvg_video_link ) ? data.video_thumbnail_src : data.gallery_thumbnail_src #>
+    <# videoHeight = ( data.rtwpvg_video_width ) ? data.rtwpvg_video_width : 'auto' #>
+    <# videoWidth = ( data.rtwpvg_video_height ) ? data.rtwpvg_video_height : '100%' #>
+
+    <div class="rtwpvg-gallery-image {{hasVideo}}">
+        <# if(data.rtwpvg_video_link) { #>
+        <# if(data.rtwpvg_video_embed_type == 'video') { #>
+        <div class="rtwpvg-single-video-container">
+            <video disablePictureInPicture preload="auto" controls controlsList="nodownload"
+                   src="{{ data.rtwpvg_video_link }}"
+                   poster="{{data.src}}"
+                   style="width: {{videoWidth}}; height: {{videoHeight}}; margin: 0;padding: 0; background-color: #000"></video>
+        </div>
+        <# } #>
+        <# if(data.rtwpvg_video_embed_type == 'iframe') { #>
+        <div class="rtwpvg-single-video-container">
+            <iframe class="rtwpvg-lightbox-iframe" src="{{ data.rtwpvg_video_embed_url }}"
+                    style="width: {{ videoWidth }}; height: {{videoHeight}}; margin: 0;padding: 0; background-color: #000"
+                    frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+        <# } #>
+        <# }else{ #>
+        <div>
+            <div class="rtwpvg-single-image-container">
+                <# if( data.srcset ){ #>
+                <img class="{{data.class}}" width="{{data.src_w}}" height="{{data.src_h}}" src="{{data.src}}"
+                     alt="{{data.alt}}" title="{{data.title}}" data-caption="{{data.caption}}" data-src="{{data.full_src}}" data-large_image="{{data.full_src}}"
+                     data-large_image_width="{{data.full_src_w}}" data-large_image_height="{{data.full_src_h}}"
+                     srcset="{{data.srcset}}" sizes="{{data.sizes}}" {{data.extra_params}}/>
+                <# }else{ #>
+                <img class="{{data.class}}" width="{{data.src_w}}" height="{{data.src_h}}" src="{{data.src}}"
+                     alt="{{data.alt}}" title="{{data.title}}" data-caption="{{data.caption}}" data-src="{{data.full_src}}" data-large_image="{{data.full_src}}"
+                     data-large_image_width="{{data.full_src_w}}" data-large_image_height="{{data.full_src_h}}"
+                     sizes="{{data.sizes}}" {{data.extra_params}}/>
+                <# } #>
+            </div>
+        </div>
+        <# } #>
+    </div>
+</script><script type="text/html" id="tmpl-rtwpvg-thumbnail-template">
+    <# hasVideo = (  data.rtwpvg_video_link ) ? 'rtwpvg-thumbnail-video' : '' #>
+    <div class="rtwpvg-thumbnail-image {{hasVideo}}">
+        <div>
+            <img width="{{data.gallery_thumbnail_src_w}}" height="{{data.gallery_thumbnail_src_h}}"
+                 src="{{data.gallery_thumbnail_src}}" alt="{{data.alt}}" title="{{data.title}}"/>
+        </div>
+    </div>
+</script>
+<div id="yith-quick-view-modal">
+	<div class="yith-quick-view-overlay"></div>
+	<div class="yith-wcqv-wrapper">
+		<div class="yith-wcqv-main">
+			<div class="yith-wcqv-head">
+				<a href="#" id="yith-quick-view-close" class="yith-wcqv-close">X</a>
+			</div>
+			<div id="yith-quick-view-content" class="woocommerce single-product"></div>
+		</div>
+	</div>
+</div>
+	<script>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="pswp__bg"></div>
+	<div class="pswp__scroll-wrap">
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+		</div>
+		<div class="pswp__ui pswp__ui--hidden">
+			<div class="pswp__top-bar">
+				<div class="pswp__counter"></div>
+				<button class="pswp__button pswp__button--close" aria-label="Close (Esc)"></button>
+				<button class="pswp__button pswp__button--share" aria-label="Share"></button>
+				<button class="pswp__button pswp__button--fs" aria-label="Toggle fullscreen"></button>
+				<button class="pswp__button pswp__button--zoom" aria-label="Zoom in/out"></button>
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+						<div class="pswp__preloader__cut">
+							<div class="pswp__preloader__donut"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div>
+			</div>
+			<button class="pswp__button pswp__button--arrow--left" aria-label="Previous (arrow left)"></button>
+			<button class="pswp__button pswp__button--arrow--right" aria-label="Next (arrow right)"></button>
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/template" id="tmpl-variation-template">
+	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+	<p>Sorry, this product is unavailable. Please choose a different combination.</p>
+</script>
+<style id='core-block-supports-inline-css' >
+/**
+ * Core styles: block-supports
+ */
+
+</style>
+<link rel='stylesheet' id='photoswipe-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipe.min.css?ver=7.1.0'  media='all' />
+<link rel='stylesheet' id='photoswipe-default-skin-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skin.min.css?ver=7.1.0'  media='all' />
+<link rel='stylesheet' id='e-animations-css' href='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.8.1'  media='all' />
+<script type='text/javascript' id='ce4wp_form_submit-js-extra'>
+/* <![CDATA[ */
+var ce4wp_form_submit_data = {"siteUrl":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag","url":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php","nonce":"7d4cfacf96","listNonce":"27e1963cd2","activatedNonce":"cb617a2b34"};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/creative-mail-by-constant-contact/assets/js/block/submit.js?ver=1668623677' id='ce4wp_form_submit-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js?ver=1.2.0' id='jquery-selectBox-js'></script>
+<script src='http://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.js?ver=3.1.6' id='prettyPhoto-js'></script>
+<script type='text/javascript' id='jquery-yith-wcwl-js-extra'>
+/* <![CDATA[ */
+var yith_wcwl_l10n = {"ajax_url":"\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php","redirect_to_cart":"no","multi_wishlist":"","hide_add_button":"1","enable_ajax_loading":"","ajax_loader_url":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-content\/plugins\/yith-woocommerce-wishlist\/assets\/images\/ajax-loader-alt.svg","remove_from_wishlist_after_add_to_cart":"1","is_wishlist_responsive":"1","time_to_close_prettyphoto":"3000","fragments_index_glue":".","reload_on_found_variation":"1","mobile_media_query":"768","labels":{"cookie_disabled":"We are sorry, but this feature is available only if cookies on your browser are enabled.","added_to_cart_message":"<div class=\"woocommerce-notices-wrapper\"><div class=\"woocommerce-message\" role=\"alert\">Product added to cart successfully<\/div><\/div>"},"actions":{"add_to_wishlist_action":"add_to_wishlist","remove_from_wishlist_action":"remove_from_wishlist","reload_wishlist_and_adding_elem_action":"reload_wishlist_and_adding_elem","load_mobile_action":"load_mobile","delete_item_action":"delete_item","save_title_action":"save_title","save_privacy_action":"save_privacy","load_fragments":"load_fragments"},"nonce":{"add_to_wishlist_nonce":"08bf9fe81c","remove_from_wishlist_nonce":"cc3f1b1472","reload_wishlist_and_adding_elem_nonce":"423e832ca0","load_mobile_nonce":"a51c00a9bf","delete_item_nonce":"7ae691f283","save_title_nonce":"586ee81fc4","save_privacy_nonce":"047278f720","load_fragments_nonce":"b21bb3b8dd"}};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-wishlist/assets/js/unminified/jquery.yith-wcwl.js?ver=3.15.0' id='jquery-yith-wcwl-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.6.4' id='swv-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.6.4' id='contact-form-7-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.js?ver=2.7.0-wc.7.1.0' id='jquery-blockui-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/demo\/wordpress\/themes\/fototag\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.js?ver=7.1.0' id='wc-add-to-cart-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.js?ver=2.1.4-wc.7.1.0' id='js-cookie-js'></script>
+<script type='text/javascript' id='woocommerce-js-extra'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/demo\/wordpress\/themes\/fototag\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.js?ver=7.1.0' id='woocommerce-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/demo\/wordpress\/themes\/fototag\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_436860965685fe8bdd6729542add7e88","fragment_name":"wc_fragments_436860965685fe8bdd6729542add7e88","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.js?ver=7.1.0' id='wc-cart-fragments-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-after'>
+		jQuery( 'body' ).bind( 'wc_fragments_refreshed', function() {
+			var jetpackLazyImagesLoadEvent;
+			try {
+				jetpackLazyImagesLoadEvent = new Event( 'jetpack-lazy-images-load', {
+					bubbles: true,
+					cancelable: true
+				} );
+			} catch ( e ) {
+				jetpackLazyImagesLoadEvent = document.createEvent( 'Event' )
+				jetpackLazyImagesLoadEvent.initEvent( 'jetpack-lazy-images-load', true, true );
+			}
+			jQuery( 'body' ).get( 0 ).dispatchEvent( jetpackLazyImagesLoadEvent );
+		} );
+		
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woo-product-variation-gallery-pro/assets/js/slick.js?ver=1.8.1' id='rtwpvg-slider-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/js/underscore.min.js?ver=1.13.4' id='underscore-js'></script>
+<script type='text/javascript' id='wp-util-js-extra'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/js/wp-util.js?ver=6.1.1' id='wp-util-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
+<script type='text/javascript' id='rtwpvg-js-extra'>
+/* <![CDATA[ */
+var rtwpvg = {"reset_on_variation_change":"1","enable_zoom":"1","enable_lightbox":"1","enable_thumbnail_slide":"1","thumbnails_columns":"4","is_vertical":"1","thumbnail_position":"left","is_mobile":"","gallery_width":"100","gallery_md_width":"0","gallery_sm_width":"720","gallery_xsm_width":"320"};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woo-product-variation-gallery-pro/assets/js/rtwpvg.js?ver=1671449119' id='rtwpvg-js'></script>
+<script type='text/javascript' id='yith-woocompare-main-js-extra'>
+/* <![CDATA[ */
+var yith_woocompare = {"ajaxurl":"\/demo\/wordpress\/themes\/fototag\/?wc-ajax=%%endpoint%%","actionadd":"yith-woocompare-add-product","actionremove":"yith-woocompare-remove-product","actionview":"yith-woocompare-view-table","actionreload":"yith-woocompare-reload-product","added_label":"Added","table_title":"Product Comparison","auto_open":"yes","loader":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-content\/plugins\/yith-woocommerce-compare\/assets\/images\/loader.gif","button_text":"Compare","cookie_name":"yith_woocompare_list","close_label":"Close"};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-compare/assets/js/woocompare.js?ver=2.20.1' id='yith-woocompare-main-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-compare/assets/js/jquery.colorbox-min.js?ver=1.4.21' id='jquery-colorbox-js'></script>
+<script type='text/javascript' id='yith-wcqv-frontend-js-extra'>
+/* <![CDATA[ */
+var yith_qv = {"ajaxurl":"\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php","loader":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-content\/plugins\/yith-woocommerce-quick-view\/assets\/image\/qv-loader.gif","lang":""};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/yith-woocommerce-quick-view/assets/js/frontend.js?ver=1.21.0' id='yith-wcqv-frontend-js'></script>
+<script type='text/javascript' id='mailchimp-woocommerce-js-extra'>
+/* <![CDATA[ */
+var mailchimp_public_data = {"site_url":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag","ajax_url":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php","disable_carts":"","subscribers_only":"","language":"en","allowed_to_set_cookies":"1"};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/mailchimp-for-woocommerce/public/js/mailchimp-woocommerce-public.min.js?ver=2.7.6.01' id='mailchimp-woocommerce-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/popper.min.js?ver=1671449119' id='popper-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/bootstrap.min.js?ver=1671449119' id='bootstrap-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/slick.min.js?ver=1671449119' id='slick-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/jquery.waypoints.min.js?ver=1671449119' id='jquery-waypoints-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/jquery.counterup.min.js?ver=1671449119' id='jquery-counterup-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/isotope.pkgd.min.js?ver=1671449119' id='isotope-pkgd-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/jquery.magnific-popup.min.js?ver=1671449119' id='jquery-magnific-popup-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/jquery.meanmenu.min.js?ver=1671449119' id='jquery-meanmenu-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/sal.js?ver=1671449119' id='sal-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/cursor.js?ver=1671449119' id='cursor-js'></script>
+<script type='text/javascript' id='fototag-main-js-extra'>
+/* <![CDATA[ */
+var FototagObj = {"ajaxurl":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php","hasAdminBar":"0","headerStyle":"3","siteLogo":"<div class=\"mobile-menu-nav-back\"><a href=\"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/\" alt=\"Fototag\" class=\"img-logo\"><img class=\"logo-small\" src=\"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-content\/uploads\/2020\/11\/logo-dark.png\" \/><\/a><\/div>","ajaxURL":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-admin\/admin-ajax.php","nonce":"a2cf546ca4"};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/main.js?ver=1671449119' id='fototag-main-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/fototag-core/assets/js/fototag-core.js?ver=6.1.1' id='fototag-core-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/scrollMagic/ScrollMagic.min.js?ver=1671449119' id='ScrollMagic-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/scrollMagic/animation.gsap.min.js?ver=1671449119' id='animation-gsap-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/scrollMagic/debug.addIndicators.min.js?ver=1671449119' id='debug-addIndicators-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/scrollMagic/TweenMax.min.js?ver=1671449119' id='TweenMax-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/scrollMagic/ScrollMagic-function.js?ver=1671449119' id='ScrollMagic-function-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-variation-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/demo\/wordpress\/themes\/fototag\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.js?ver=7.1.0' id='wc-add-to-cart-variation-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.js?ver=1.7.21-wc.7.1.0' id='zoom-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.js?ver=4.1.1-wc.7.1.0' id='photoswipe-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.js?ver=4.1.1-wc.7.1.0' id='photoswipe-ui-default-js'></script>
+<script type='text/javascript' id='wc-single-product-js-extra'>
+/* <![CDATA[ */
+var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":false,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false},"zoom_enabled":"1","zoom_options":[],"photoswipe_enabled":"1","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":"1"};
+/* ]]> */
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/woocommerce/assets/js/frontend/single-product.js?ver=7.1.0' id='wc-single-product-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/js/webpack.runtime.js?ver=3.8.1' id='elementor-webpack-runtime-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/js/frontend-modules.js?ver=3.8.1' id='elementor-frontend-modules-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-includes/js/jquery/ui/core.js?ver=1.13.2' id='jquery-ui-core-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/themes/fototag/assets/js/swiper.min.js?ver=1671449119' id='swiper-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/lib/share-link/share-link.js?ver=3.8.1' id='share-link-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/lib/dialog/dialog.js?ver=4.9.0' id='elementor-dialog-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":true},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":992,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":991,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.8.1","is_static":false,"experimentalFeatures":{"e_import_export":true,"e_hidden_wordpress_widgets":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true},"urls":{"assets":"https:\/\/radiustheme.com\/demo\/wordpress\/themes\/fototag\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"viewport_tablet":991,"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":718,"title":"Home%202%20%E2%80%93%20Fototag","excerpt":"","featuredImage":false}};
+</script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/js/frontend.js?ver=3.8.1' id='elementor-frontend-js'></script>
+<script src='https://radiustheme.com/demo/wordpress/themes/fototag/wp-content/plugins/elementor/assets/js/preloaded-modules.js?ver=3.8.1' id='preloaded-modules-js'></script>
+
+</body>
+
+<!-- Mirrored from radiustheme.com/demo/wordpress/themes/fototag/home-2/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2022 11:25:22 GMT -->
+</html>
